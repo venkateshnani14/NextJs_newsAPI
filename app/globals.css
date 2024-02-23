@@ -31,3 +31,5 @@ body {
     text-wrap: balance;
   }
 }
+li a,#copyright,#heading{letter-spacing:4px;}
+li a:hover{cursor:pointer}

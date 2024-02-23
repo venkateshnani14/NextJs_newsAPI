@@ -1,14 +1,11 @@
 'use client';
 import Image from "next/image";
-import Navbar from './components/Navbar'
+import Navbar from '../components/Navbar'
 import { useState,useEffect } from 'react'
-import { gsap } from 'gsap'
-
-export default async function Home() {
-  const [newsCategory,setNewsCategory] = useState('General')
+export default async function General(){
+  const [newsCategory,setNewsCategory] = useState('general')
   useEffect(()=>{
     DataFetching();
-    gsap.fromTo(".textDiv",{opacity:0,y:100},{y:0,opacity:1,duration:1.5,ease:"power1"})
   },[newsCategory])
   async function DataFetching(){
     let source = `https://newsapi.org/v2/top-headlines?country=us&category=${newsCategory}&apiKey=26fd714f5d46482b924a665ce471ef76`
@@ -27,8 +24,8 @@ export default async function Home() {
     <>
     <div className="min-h-screen pb-6 bg-white">
     <Navbar newsCategory = {categoryRetriever}/>
-    <div className = "textDiv flex-wrap flex justify-center items-center text-center m-10">
-      <p id="heading" className = "text-xs md:text-lg lg:text-xl xl:text-5xl font-bold text-indigo-500">"Stay Informed, Stay Engaged: Your Gateway to the Latest News and Stories That Matter"</p>
+    <div>
+      <p></p>
     </div>
     <div>
       <div className='flex flex-wrap justify-center'>
@@ -62,5 +59,6 @@ export default async function Home() {
     </footer>
     </>
   );
-}
 
+
+}
